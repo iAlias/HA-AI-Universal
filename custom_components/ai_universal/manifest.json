@@ -1,0 +1,15 @@
+{
+  "domain": "ai_universal",
+  "name": "AI Universal Multi-LLM Bridge",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/iAlias/AI-Universal-",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "requirements": [
+    "openai>=1.0.0,<2.0.0",
+    "anthropic>=0.20.0,<1.0.0",
+    "google-generativeai>=0.7.0,<1.0.0"
+  ],
+  "version": "1.0.0"
+}

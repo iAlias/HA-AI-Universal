@@ -1,0 +1,51 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up AI Universal Multi-LLM Bridge",
+        "description": "Configure your AI Universal Home Assistant Expert. Select your preferred AI provider below.",
+        "data": {
+          "name": "Name",
+          "provider": "AI Provider"
+        }
+      },
+      "api_key": {
+        "title": "API Key & Model",
+        "description": "Enter your API key and choose the model to use.",
+        "data": {
+          "api_key": "API Key",
+          "model": "Model"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the AI provider. Please check your API key and try again."
+    },
+    "abort": {
+      "already_configured": "This provider is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "AI Universal Options",
+        "description": "Customize the Home Assistant Expert system prompt and generation parameters.",
+        "data": {
+          "system_prompt": "System Prompt",
+          "max_tokens": "Max Tokens",
+          "temperature": "Temperature"
+        }
+      }
+    }
+  },
+  "selector": {
+    "provider": {
+      "options": {
+        "openai": "OpenAI (ChatGPT)",
+        "anthropic": "Anthropic (Claude)",
+        "gemini": "Google (Gemini)",
+        "perplexity": "Perplexity AI"
+      }
+    }
+  }
+}
