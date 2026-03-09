@@ -9,8 +9,13 @@ class TestConfig:
 
     def test_default_provider_is_openai(self):
         with patch.dict(os.environ, {}, clear=True):
-            # Reload to pick up env changes
-            assert Config.provider is not None
+            from importlib import reload
+
+            from uai import config
+
+            reload(config)
+            assert config.Config.provider == "openai"
+            reload(config)
 
     def test_provider_from_env(self):
         with patch.dict(os.environ, {"AI_PROVIDER": "gemini"}):

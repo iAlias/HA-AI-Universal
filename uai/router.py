@@ -1,9 +1,13 @@
+import logging
+
 from .config import Config
 from .providers.claude import ClaudeProvider
 from .providers.copilot import CopilotProvider
 from .providers.gemini import GeminiProvider
 from .providers.openai import OpenAIProvider
 from .providers.perplexity import PerplexityProvider
+
+logger = logging.getLogger(__name__)
 
 
 class AIRouter:
@@ -34,7 +38,8 @@ class AIRouter:
 
         try:
             return provider.generate(prompt)
-        except Exception:
+        except Exception as e:
+            logger.warning("Provider '%s' failed: %s", self.active, e)
             return self._fallback(prompt)
 
     def stream(self, prompt):
@@ -50,7 +55,8 @@ class AIRouter:
 
             try:
                 return provider.generate(prompt)
-            except Exception:
+            except Exception as e:
+                logger.warning("Fallback provider '%s' failed: %s", name, e)
                 continue
 
         raise RuntimeError("All providers failed")

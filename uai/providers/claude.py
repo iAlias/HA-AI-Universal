@@ -13,6 +13,7 @@ class ClaudeProvider(BaseProvider):
 
         headers = {
             "x-api-key": os.getenv("ANTHROPIC_API_KEY"),
+            "anthropic-version": "2023-06-01",
         }
 
         data = {

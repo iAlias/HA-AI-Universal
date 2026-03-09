@@ -3,6 +3,9 @@ import time
 
 def retry(fn, retries=3, delay=1):
     """Retry a function with exponential backoff."""
+    if retries < 1:
+        raise ValueError("retries must be at least 1")
+
     last_error = None
     for attempt in range(retries):
         try:
