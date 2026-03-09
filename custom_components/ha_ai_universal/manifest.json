@@ -1,0 +1,11 @@
+{
+    "domain": "ha_ai_universal",
+    "name": "HA AI Universal",
+    "version": "0.1.0",
+    "documentation": "https://github.com/iAlias/HA-AI-Universal",
+    "issue_tracker": "https://github.com/iAlias/HA-AI-Universal/issues",
+    "codeowners": ["@iAlias"],
+    "requirements": ["requests>=2.31.0"],
+    "iot_class": "cloud_polling",
+    "integration_type": "service"
+}
